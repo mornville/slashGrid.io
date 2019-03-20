@@ -475,6 +475,19 @@ a:hover {
   transition-timing-function: cubic-bezier(0.595, 0.03, 0, 0.88);
   /* custom */
 }
+@media screen and (max-width: 600px) {
+  .hid {
+
+    display: none;
+  }
+  .sho{
+    display: block !important;
+  }
+  h6 { font-size: 16px !important; }
+  h3 { font-size: 20px !important; }
+  p { font-size: 13px !important; }
+}
+
 .preloader .inner {
   width: 100%;
   height: 100%;
@@ -2463,6 +2476,10 @@ a:hover {
   font-weight: 600;
   opacity: 0;
 }
+.shade {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 
 /* FOOTER */
 .footer {
