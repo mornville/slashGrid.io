@@ -481,7 +481,7 @@ a:hover {
   position: absolute;
   left: 0;
   top: 0;
-  background: url(../images/preloader.gif) center no-repeat #000;
+  background: url(../images/load.gif) center no-repeat #000;
   background-size: 80px 80px;
   -webkit-transition: all 400ms cubic-bezier(0.595, 0.03, 0, 0.88);
   -moz-transition: all 400ms cubic-bezier(0.595, 0.03, 0, 0.88);
@@ -1814,12 +1814,29 @@ a:hover {
   padding-bottom: 80px;
   background: #fff;
 }
+.lul-content {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 10px;
+  padding-bottom: 80px;
+
+ 
+}
 .features-content h2 {
   font-size: 50px;
   font-weight: 800;
   margin-bottom: 40px;
   margin-top: -10px;
 }
+.lul-content h2 {
+  font-size: 50px;
+  font-weight: 800;
+  margin-bottom: 40px;
+  margin-top: -10px;
+  color: #fff;
+}
+
 .features-content h6 {
   font-size: 17px;
   font-weight: 300;
