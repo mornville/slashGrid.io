@@ -2142,7 +2142,7 @@ a:hover {
   color: #fff;
 }
 .our-team figure:hover {
-  background: url(../images/team-splash.png) center no-repeat;
+  background: url(../images/team-spash.png) center no-repeat;
   background-size: cover;
 }
 .our-team figure:hover img {
