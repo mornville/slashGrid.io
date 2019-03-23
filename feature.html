@@ -129,7 +129,7 @@
              
               <!-- end col-12 -->
               <div class="col-md-6 wow fadeInUp">
-                <figure><img src="images/ui2.png" alt="Image" class="shade" ></figure>
+                <figure><img class="lazy"  class="img-responsive" src="images/bur.jpg" data-src="images/ui2.png" class="shade" ></figure>
               </div>
               <!-- end col-6 -->
               <div class="col-md-6 wow fadeInUp">
@@ -143,7 +143,7 @@
                 </div>
              <!-- end col-12 -->
              <div class="col-12 wow fadeInUp">
-                    <figure><img src="images/seo.png" alt="Image" class="shade"></figure>
+                    <figure><img class="lazy"  class="img-responsive" src="images/bur.jpg" data-src="images/seo.png" alt="Image" class="shade"></figure>
                   </div>
               <!-- end col-3 -->
              
@@ -156,19 +156,19 @@
                 </div>
              <!-- end col-12 -->
              <div class="col-lg-3 col-md-6 wow fadeInUp">
-                    <figure><img src="images/vue.png" alt="Image" style="height:200px;width: 200px"></figure>
+                    <figure><img class="lazy"  class="img-responsive" src="images/bur.jpg" data-src="images/vue.png" alt="Image" style="height:200px;width: 200px"></figure>
                   </div>
                   <!-- end col-3 -->
                   <div class="col-lg-3 col-md-6 wow fadeInUp">
-                    <figure><img src="images/js.png" alt="Image" style="height:200px;width: 200px"></figure>
+                    <figure><img class="lazy"  class="img-responsive" src="images/bur.jpg" data-src="images/js.png" alt="Image" style="height:200px;width: 200px"></figure>
                   </div>
                   <!-- end col-3 -->
                   <div class="col-lg-3 col-md-6 wow fadeInUp">
-                    <figure><img src="images/jquery.png" alt="Image" style="height:200px;width: 200px"></figure>
+                    <figure><img class="lazy"  class="img-responsive" src="images/bur.jpg" data-src="images/jquery.png" alt="Image" style="height:200px;width: 200px"></figure>
                   </div>
                   <!-- end col-3 -->
                   <div class="col-lg-3 col-md-6 wow fadeInUp">
-                    <figure><img src="images/boot.png" alt="Image" style="height:200px;width: 200px"></figure>
+                    <figure><img class="lazy"  class="img-responsive" src="images/bur.jpg" data-src="images/boot.png" alt="Image" style="height:200px;width: 200px"></figure>
                   </div>
               <!-- end col-12 --> 
                <div class="col-12 wow fadeInUp" id="case-section-4">
@@ -178,7 +178,7 @@
                 </div>
              <!-- end col-12 -->
              <div class="col-md-6 offset-md-3 wow fadeInUp">
-                <figure><img src="images/supp.png" alt="Image"></figure>
+                <figure><img class="lazy"  class="img-responsive" src="images/bur.jpg" data-src="images/supp.png" alt="Image"></figure>
               </div>
               <!-- end col-6 -->
             
@@ -238,6 +238,7 @@
   <audio id="link" src="audio/link.mp3" preload="auto"></audio>
   <audio id="hover-audio" src="audio/hover.mp3" preload="auto"></audio>
   
+
   
   <!-- JS FILES -->
   <script src="js/jquery.min.js"></script>
@@ -254,5 +255,40 @@
   <script src='js/jquery.parallax.min.js'></script>
   <script src='js/motion.blur.js'></script>
   <script src="js/scripts.js"></script>
+  <script>
+
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyloadImages = document.querySelectorAll("img.lazy");    
+  var lazyloadThrottleTimeout;
+  
+  function lazyload () {
+    if(lazyloadThrottleTimeout) {
+      clearTimeout(lazyloadThrottleTimeout);
+    }    
+    
+    lazyloadThrottleTimeout = setTimeout(function() {
+        var scrollTop = window.pageYOffset;
+        lazyloadImages.forEach(function(img) {
+            if(img.offsetTop < (window.innerHeight + scrollTop)) {
+              img.src = img.dataset.src;
+             
+            
+              img.classList.remove('lazy');
+            }
+        });
+        if(lazyloadImages.length == 0) { 
+          document.removeEventListener("scroll", lazyload);
+          window.removeEventListener("resize", lazyload);
+          window.removeEventListener("orientationChange", lazyload);
+        }
+    }, 20);
+  }
+  
+  document.addEventListener("scroll", lazyload);
+  window.addEventListener("resize", lazyload);
+  window.addEventListener("orientationChange", lazyload);
+});
+
+</script>
   </body>
   </html>
