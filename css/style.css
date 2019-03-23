@@ -493,6 +493,9 @@ a:hover {
   h2{
     font-size: 24px !important;
   }
+  .inner h2{
+    font-size:40px !important;
+  }
   p { font-size: 13px !important; }
   .swiper-slide{
     font-size: 30px !important; 
