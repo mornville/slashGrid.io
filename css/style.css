@@ -480,6 +480,10 @@ a:hover {
   .hid {
 
     display: none;
+  }.animation-bg .inner img {
+    display: inline-block;
+    width: 250px !important;
+    max-width: 100%;
   }
   .sho{
     display: block !important;
