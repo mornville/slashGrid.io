@@ -1413,6 +1413,11 @@ a:hover {
   max-width: 100%;
 }
 
+
+.bac{
+  background: black;
+}
+
 /* VIDEO HERO */
 .video-hero {
   width: 100%;
@@ -2570,8 +2575,9 @@ a:hover {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-  }
 
+  }
+ 
   .header .gallery-thumbs {
     height: 60%;
     top: 20%;
@@ -2629,7 +2635,7 @@ a:hover {
   .hide-mobile {
     display: none;
   }
-
+  
   .navbar {
     padding: 20px 30px;
   }

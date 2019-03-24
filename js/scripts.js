@@ -69,11 +69,11 @@
 
 		// HIDE NAVBAR
 		$(window).scroll(function () {
-			if ($(this).scrollTop() > 300) {
-				$('.navbar').addClass('hide');
-				$('.navbar').css('transition-delay', '0s');
+			if ($(this).scrollTop() > 100) {
+				$('.navbar').addClass('bac');
+			
 			} else {
-				$('.navbar').removeClass('hide');
+				$('.navbar').removeClass('bac');
 			}
 		});
 
