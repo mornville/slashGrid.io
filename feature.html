@@ -29,6 +29,48 @@
     <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$('a[href*="#"]')
+  // Remove links that don't actually link to anything
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .click(function(event) {
+    // On-page links
+    if (
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+      && 
+      location.hostname == this.hostname
+    ) {
+      // Figure out element to scroll to
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      // Does a scroll target exist?
+      if (target.length) {
+        // Only prevent default if animation is actually gonna happen
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000, function() {
+          // Callback after animation
+          // Must change focus!
+          var $target = $(target);
+          $target.focus();
+          if ($target.is(":focus")) { // Checking if the target was focused
+            return false;
+          } else {
+            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+            $target.focus(); // Set focus again
+          };
+        });
+      }
+    }
+  });
+</script>
+    <style>
+    html {
+  scroll-behavior: smooth;
+}</style>
 </head>
 <body>
 <div class="preloader">
@@ -103,7 +145,7 @@
          <div class="case-navbar">
                  <div class="container ">
                   <ul class="hid">
-                    <li> <a href="#case-section-1">Beautiful UI</a> </li>
+                    <li> <a href="#1">Beautiful UI</a> </li>
                     <li> <a href="#case-section-2">SEO-Friendly</a> </li>
                     <li> <a href="#case-section-3">Latest Tech</a> </li>
                  
@@ -120,7 +162,7 @@
                 </div>
           <div class="container">
             <div class="row">
-              <div class="col-12 wow fadeInUp" id="case-section-1">
+              <div class="col-12 wow fadeInUp" id="1">
               <h3>Beautiful UI</h3>
               <h6>You'll Love Us <span class="fa fa-heart"></span></h6>
               <p>So, the height and width is not fixed, and it is calculated dynamically according to the diminutions of the window. Under that div, there is another one that has the<b> ID header</b> “navigation bar”, the header is initially <em>positioned</em> relatively under div.fullscreen – however, I am trying to position it as Fixed when the top of the #header reaches the top of the browser window. So here is what I am <u>playing around</u>, it toggles the Fixed style, but it does not toggle it at the right place…</p>
