@@ -1,2 +1,3 @@
 # slashGrid.io
-slashGrid Official Website :-)
+slashGrid Official Website 
+
